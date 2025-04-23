@@ -178,8 +178,8 @@ catalogs:
       specifier: ^4.0.1
       version: 4.0.1
     consola:
-      specifier: ^3.4.0
-      version: 3.4.0
+      specifier: ^3.4.2
+      version: 3.4.2
     cross-env:
       specifier: ^7.0.3
       version: 7.0.3
@@ -934,7 +934,7 @@ importers:
         version: 5.4.1
       consola:
         specifier: 'catalog:'
-        version: 3.4.0
+        version: 3.4.2
       dayjs:
         specifier: 'catalog:'
         version: 1.11.13
@@ -5201,6 +5201,10 @@ packages:
 
   consola@3.4.0:
     resolution: {integrity: sha512-EiPU8G6dQG0GFHNR8ljnZFki/8a+cQwEQ+7wpxdChl02Q8HXlwEZWD5lqAF8vC2sEC3Tehr8hy7vErz88LHyUA==}
+    engines: {node: ^14.18.0 || >=16.10.0}
+
+  consola@3.4.2:
+    resolution: {integrity: sha512-5IKcdX0nnYavi6G7TtOhwkYzyjfJlatbjMjuLSfE2kYT5pMDOilZ4OvMhi637CcDICTmz3wARPoyhqyX1Y+XvA==}
     engines: {node: ^14.18.0 || >=16.10.0}
 
   content-disposition@1.0.0:
@@ -14387,6 +14391,8 @@ snapshots:
   consola@2.15.3: {}
 
   consola@3.4.0: {}
+
+  consola@3.4.2: {}
 
   content-disposition@1.0.0:
     dependencies:
