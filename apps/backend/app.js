@@ -1,22 +1,24 @@
-const express = require('express');
-const app = express();
-const port = 3000;
-const cors = require('cors');
-app.use(cors());  // 允许所有来源访问，一定要写在路由前面才能生效
+import cors from 'cors';
+import express from 'express'; // 允许所有来源访问，一定要写在路由前面才能生效
 
 // 注册路由到主应用
-const usersRouter = require('./api/users');
-app.use(express.json());  // 解析JSON请求体:cite[5]:cite[10]
+import usersRouter from './api/users.js';
+
+const app = express();
+const port = 3000;
+app.use(cors());
+
+app.use(express.json()); // 解析JSON请求体:cite[5]:cite[10]
 app.use('/api/users', usersRouter);
 
 // 处理根路径的GET请求
 app.get('/', (req, res) => {
-    res.send('Hello World!');
+  res.send('Hello World!');
 });
-  
-  // 返回JSON数据
+
+// 返回JSON数据
 app.get('/api/greeting', (req, res) => {
-    res.json({ message: 'Welcome to Express API!', status: 200 });
+  res.json({ message: 'Welcome to Express API!', status: 200 });
 });
 
 // app.post('/api/users', (req, res) => {
@@ -32,5 +34,7 @@ app.get('/api/greeting', (req, res) => {
 
 // 启动服务器
 app.listen(port, () => {
-  console.log(`Server running at http://localhost:${port}`);
+  console.warn(`Server running at http://localhost:${port}`);
 });
+
+export default app;

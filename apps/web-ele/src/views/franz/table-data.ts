@@ -1,24 +1,18 @@
 interface TableRowData {
-  address: string;
-  age: number;
   id: number;
   name: string;
-  nickname: string;
-  role: string;
+  email: string;
 }
 
-const roles = ['User', 'Admin', 'Manager', 'Guest'];
+// const roles = ['User', 'Admin', 'Manager', 'Guest'];
 
 export const MOCK_TABLE_DATA: TableRowData[] = (() => {
   const data: TableRowData[] = [];
-  for (let i = 0; i < 40; i++) {
+  for (let i = 0; i < 2; i++) {
     data.push({
-      address: `New York${i}`,
-      age: i + 1,
       id: i,
       name: `Test${i}`,
-      nickname: `Test${i}`,
-      role: roles[Math.floor(Math.random() * roles.length)] as string,
+      email: `Test${i}`,
     });
   }
   return data;

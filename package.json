@@ -41,11 +41,12 @@
     "check:type": "turbo run typecheck",
     "clean": "node ./scripts/clean.mjs",
     "commit": "czg",
-    "dev": "turbo-run dev",
-    "dev:antd": "pnpm -F @vben/web-antd run dev",
+    "dev": "concurrently \"pnpm -F @vben/web-ele run dev\" \"pnpm -F @vben/be run dev\"",
+    "fe": "pnpm -F @vben/web-ele run dev",
+    "be": "pnpm -F @vben/be run dev",
+    "tb": "turbo-run dev",
     "dev:docs": "pnpm -F @vben/docs run dev",
     "dev:ele": "pnpm -F @vben/web-ele run dev",
-    "dev:naive": "pnpm -F @vben/web-naive run dev",
     "dev:play": "pnpm -F @vben/playground run dev",
     "format": "vsh lint --format",
     "lint": "vsh lint",
@@ -59,6 +60,10 @@
     "test:e2e": "turbo run test:e2e",
     "update:deps": "npx taze -r -w",
     "version": "pnpm exec changeset version && pnpm install --no-frozen-lockfile"
+  },
+  "dependencies": {
+    "concurrency": "^0.1.4",
+    "concurrently": "^9.1.2"
   },
   "devDependencies": {
     "@changesets/changelog-github": "catalog:",
