@@ -17,7 +17,9 @@ router.put('/:id', async (req, res) => {
     if (result.affectedRows === 0) {
       return res.status(404).json({ error: 'User not found' });
     }
-    res.status(204).end();
+    res
+      .status(204)
+      .json({ code: 0, data: null, error: null, message: '更新成功！' });
   } catch (error) {
     res.status(500).json({ error: error.message });
   }
@@ -32,7 +34,9 @@ router.delete('/:id', async (req, res) => {
     if (result.affectedRows === 0) {
       return res.status(404).json({ error: 'User not found' });
     }
-    res.status(204).end();
+    res
+      .status(204)
+      .json({ code: 0, data: null, error: null, message: '删除成功！' });
   } catch (error) {
     res.status(500).json({ error: error.message });
   }
@@ -59,7 +63,9 @@ router.post('/', async (req, res) => {
       'INSERT INTO users (name, email) VALUES (?, ?)',
       [name, email],
     );
-    res.status(201).json({ id: result.insertId, name, email });
+    res
+      .status(201)
+      .json({ code: 0, data: result, error: null, message: '插入成功！' });
   } catch (error) {
     res.status(400).json({ error: error.message });
   }

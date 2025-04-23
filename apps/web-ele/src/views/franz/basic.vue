@@ -91,6 +91,12 @@ function changeLoading() {
       </template> -->
       <template #toolbar-tools>
         <ElButton class="mr-2" type="primary" @click="changeBorder">
+          更新数据
+        </ElButton>
+        <ElButton class="mr-2" type="primary" @click="changeBorder">
+          {{ showBorder ? '隐藏' : '显示' }}边框
+        </ElButton>
+        <ElButton class="mr-2" type="primary" @click="changeBorder">
           {{ showBorder ? '隐藏' : '显示' }}边框
         </ElButton>
         <ElButton class="mr-2" type="primary" @click="changeLoading">

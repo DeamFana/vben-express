@@ -62,8 +62,7 @@
     "version": "pnpm exec changeset version && pnpm install --no-frozen-lockfile"
   },
   "dependencies": {
-    "concurrency": "^0.1.4",
-    "concurrently": "^9.1.2"
+    "concurrency": "^0.1.4"
   },
   "devDependencies": {
     "@changesets/changelog-github": "catalog:",
@@ -83,6 +82,7 @@
     "@vitejs/plugin-vue-jsx": "catalog:",
     "@vue/test-utils": "catalog:",
     "autoprefixer": "catalog:",
+    "concurrently": "^9.1.2",
     "cross-env": "catalog:",
     "cspell": "catalog:",
     "happy-dom": "catalog:",
